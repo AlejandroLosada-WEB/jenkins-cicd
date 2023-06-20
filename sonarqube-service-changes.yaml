@@ -1,0 +1,82 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sonarqube-sonarqube
+  namespace: sonarqube
+  uid: aeec42fe-a2e4-43e5-ae32-78897950cbe5
+  resourceVersion: '332686'
+  creationTimestamp: '2023-06-20T17:00:25Z'
+  labels:
+    app: sonarqube
+    app.kubernetes.io/managed-by: Helm
+    chart: sonarqube-10.0.0_521
+    heritage: Helm
+    release: sonarqube
+  annotations:
+    meta.helm.sh/release-name: sonarqube
+    meta.helm.sh/release-namespace: sonarqube
+  managedFields:
+    - manager: helm
+      operation: Update
+      apiVersion: v1
+      time: '2023-06-20T17:00:25Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":9000,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+    - manager: k8saasapi
+      operation: Update
+      apiVersion: v1
+      time: '2023-06-20T17:55:57Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:externalTrafficPolicy: {}
+          f:ports:
+            k:{"port":9000,"protocol":"TCP"}:
+              f:nodePort: {}
+          f:type: {}
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 9000
+      targetPort: http
+      nodePort: 31000 #Añadir esto 
+  selector:
+    app: sonarqube
+    release: sonarqube
+  clusterIP: 10.245.228.138
+  clusterIPs:
+    - 10.245.228.138
+  type: NodePort #Y cambiar esto
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  internalTrafficPolicy: Cluster
+status:
+  loadBalancer: {}

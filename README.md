@@ -36,5 +36,27 @@ Crear pipeline con jenkins.pipeline.groovy
 Automaticamente se instalará node
 ```
 
+# Instalación de gitlab
+
+```
+Instalar plugin gitlab.
+```
+
+# Instalación de slack
+
+```
+Instalar plugin slack.
+Secret text auth
+```
+
+# Documentación
+
+```
+aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj0tc2FDLVk3WndxYw==
+
+
+aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1yNXpoVHU2OTRLYw==
+```
+
 
 ## Alejandro Losada Martínez ANGULAR FRONTEND
